@@ -1,1 +1,0 @@
-package hm.offer.common.controller;

@@ -1,6 +1,6 @@
 FROM openjdk:11
 
-EXPOSE 8085
+EXPOSE 8090
 
 ADD build/libs/offer-0.0.1-SNAPSHOT.jar offer-0.0.1-SNAPSHOT.jar
 
