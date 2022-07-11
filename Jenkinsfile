@@ -12,7 +12,7 @@ pipeline {
     }
 
     stages {
-        // git¿¡¼­ repository clone
+        // gitï¿½ï¿½ï¿½ï¿½ repository clone
         stage('Prepare') {
           steps {
             echo 'Clonning Repository'
@@ -43,7 +43,7 @@ pipeline {
                 }
 
                 failure {
-                    echo 'gradle build failed'
+                    echo 'gradle build failed...'
                 }
             }
         }
