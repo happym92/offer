@@ -3,6 +3,7 @@
 > vue create '이름' --no-git
 > npm i -g @vue/cli
 > npm install : package.json에 작성된 의존패키지 설치
+> npm run serve
 > npm run build : 빌드작업만
 > npm run 
 
