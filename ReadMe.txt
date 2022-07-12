@@ -21,3 +21,8 @@
 > Live Server
 > Prettier - Code formatter
 > Vetur
+
+#issue
+> eslint 포맷 에러 콘피그 설정 필요
+> eslint --init
+> npm install -g eslint
