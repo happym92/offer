@@ -10,6 +10,6 @@ public class PageController {
     @GetMapping("/home")
     public String index(){
 
-        return "home.html";
+        return "index.html";
     }
 }
