@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class VueController {
 
-	@GetMapping("/vuef")
+	@GetMapping("/v")
 	public String testPage() {
 		
 		return "index.html";

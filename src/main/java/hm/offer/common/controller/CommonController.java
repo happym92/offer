@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class CommonController {
 
-	@GetMapping("/")
+	@GetMapping("/str")
 	public String testPage() {
 		log.info("test suc");
 		return "hello";

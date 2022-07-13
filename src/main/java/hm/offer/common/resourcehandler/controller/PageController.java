@@ -1,15 +1,15 @@
-package hm.offer.common.controller;
+package hm.offer.common.resourcehandler.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class FrontController {
+public class PageController {
 
-    @GetMapping("/homedd")
+    @GetMapping("/home")
     public String index(){
 
-        return "index.html";
+        return "home.html";
     }
 }
