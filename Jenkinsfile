@@ -23,11 +23,7 @@ pipeline {
             post {
              success { 
                echo 'Successfully Cloned Repository'
-               sh 'cd /var/jenkins_home/workspace/composetest/'
-               sh 'ls -al'
                
-               //sh 'docker cp jenkins:/var/jenkins_home/workspace/composetest/docker-compose.yml ~/my_app/ '
-               sh 'docker-compose up -d'
              }
            	 failure {
                error 'This pipeline stops here...'
@@ -35,54 +31,35 @@ pipeline {
           }
         }
 
-//       stage('build gradle') {
-//            steps {
-//                sh  './gradlew build'
-//
-//
-//                sh 'ls -al ./build'
-//            }
-//            post {
-//                success {
-//                    echo 'gradle build success'
-//                }
-//
-//                failure {
-//                    echo 'gradle build failed...'
-//                }
-//            }
-//        }
-//        
-//         stage('dockerizing'){
-//             steps{
-//                 sh 'docker build . -t devpgang/offe'
-//             }
-//         }
+        stage('build gradle') {
+             steps {
+                 sh  './gradlew build'
  
-        
- //       stage('dockerizing'){
- //           steps{
- //               sh 'docker build . -t devpgang/offe'
- //           }
- //       }
+ 
+                 sh 'ls -al ./build'
+             }
+             post {
+                 success {
+                     echo 'gradle build success'
+                 }
+ 
+                 failure {
+                     echo 'gradle build failed...'
+                 }
+             }
+         }
+         
+          stage('Docker-compose up'){
+              steps{
+                  //sh 'docker build . -t devpgang/offe'
+                  sh 'cd /var/jenkins_home/workspace/composetest/'
+                  sh 'ls -al'
+               
+                  //sh 'docker cp jenkins:/var/jenkins_home/workspace/composetest/docker-compose.yml ~/my_app/ '
+                  sh 'docker-compose up -d'
+              }
+          }
 
-//        stage('Deploy') {
-//            steps {
-//                sh 'docker stop offer'
-//                sh 'docker rm offer'
-//                sh 'docker run -d -p 8090:8090 --name offer devpgang/offe'
-//            }
-//
-//            post {
-//                success {
-//                    echo 'success'
-//                }
-//
-//                failure {
-//                    echo 'failed'
-//                }
-//            }
-//        }
         
         
         
