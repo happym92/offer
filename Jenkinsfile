@@ -23,8 +23,11 @@ pipeline {
             post {
              success { 
                echo 'Successfully Cloned Repository'
-               sh 'cd /var/jenkins_home/workspace/'
+               sh 'cd /var/jenkins_home/workspace/composetest/'
                sh 'ls -al'
+               
+               //sh 'docker cp jenkins:/var/jenkins_home/workspace/composetest/docker-compose.yml ~/my_app/ '
+               sh 'docker-compose up -d'
              }
            	 failure {
                error 'This pipeline stops here...'
