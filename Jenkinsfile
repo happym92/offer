@@ -12,7 +12,7 @@ pipeline {
     }
 
     stages {
-        // git���� repository clone
+        // git repository clone
         stage('Prepare') {
           steps {
             echo 'Clonning Repository'

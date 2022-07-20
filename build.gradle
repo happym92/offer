@@ -4,9 +4,9 @@ plugins {
 	id 'java'
 }
 
-group = 'hm.offer'
-archivesBaseName = 'offer'
-version = '0.0.1-SNAPSHOT'
+group = 'hm.test'
+archivesBaseName = 'test'
+version = '0.0.2'
 sourceCompatibility = '11'
 
 configurations {
