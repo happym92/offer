@@ -23,6 +23,8 @@ pipeline {
             post {
              success { 
                echo 'Successfully Cloned Repository'
+               sh 'cd /var/jenkins_home/workspace/'
+               sh 'ls -al'
              }
            	 failure {
                error 'This pipeline stops here...'
@@ -30,46 +32,56 @@ pipeline {
           }
         }
 
-       stage('build gradle') {
-            steps {
-                sh  './gradlew build'
-
-
-                sh 'ls -al ./build'
-            }
-            post {
-                success {
-                    echo 'gradle build success'
-                }
-
-                failure {
-                    echo 'gradle build failed...'
-                }
-            }
-        }
+//       stage('build gradle') {
+//            steps {
+//                sh  './gradlew build'
+//
+//
+//                sh 'ls -al ./build'
+//            }
+//            post {
+//                success {
+//                    echo 'gradle build success'
+//                }
+//
+//                failure {
+//                    echo 'gradle build failed...'
+//                }
+//            }
+//        }
+//        
+//         stage('dockerizing'){
+//             steps{
+//                 sh 'docker build . -t devpgang/offe'
+//             }
+//         }
+ 
         
-        stage('dockerizing'){
-            steps{
-                sh 'docker build . -t devpgang/offe'
-            }
-        }
+ //       stage('dockerizing'){
+ //           steps{
+ //               sh 'docker build . -t devpgang/offe'
+ //           }
+ //       }
 
-        stage('Deploy') {
-            steps {
-                sh 'docker stop offer'
-                sh 'docker rm offer'
-                sh 'docker run -d -p 8090:8090 --name offer devpgang/offe'
-            }
-
-            post {
-                success {
-                    echo 'success'
-                }
-
-                failure {
-                    echo 'failed'
-                }
-            }
-        }
+//        stage('Deploy') {
+//            steps {
+//                sh 'docker stop offer'
+//                sh 'docker rm offer'
+//                sh 'docker run -d -p 8090:8090 --name offer devpgang/offe'
+//            }
+//
+//            post {
+//                success {
+//                    echo 'success'
+//                }
+//
+//                failure {
+//                    echo 'failed'
+//                }
+//            }
+//        }
+        
+        
+        
     }
 }
